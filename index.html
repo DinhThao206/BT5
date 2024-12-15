@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conver Money App</title>
+
+</head>
+<body>
+    <input type="number"id="input-money" min="1"></input>
+     <select id="currency-select"> 
+        <option value="VND" >VND</option> 
+        <option value="JPY" >JPY</option>   
+        <option value="RUP" >RUP</option> 
+        <option value="EUR" >EUR</option> 
+     </select>
+    <button onclick="Out()" >Out</button>
+    <p id="output-money"></p>
+    </body>
+    <script>  
+      function Out() {
+        let inputMoney =document.getElementById("input-money").value;
+        let currencySelect =document.getElementById("currency-select").value;
+        let totalMoney =0;
+         if(currencySelect == "VND") {
+                totalMoney = 23400 * inputMoney;
+            }else if(currencySelect == "JPY") {
+                totalMoney = 151.39 * inputMoney;
+            }else if(currencySelect == "RUP") {
+                totalMoney = 100 * inputMoney;
+            } else {
+                totalMoney = 0.83 * inputMoney;
+            }
+            let message = inputMoney + " USD = " + totalMoney + " " + currencySelect;
+               document.getElementById("output-money").innerText = message;
+    }
+     
+    </script>
+</html>
